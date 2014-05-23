@@ -62,7 +62,7 @@ void _pop(Stack **top){
 	Stack *aux;
 	if(top != NULL){
 		aux = *top;
-		top = *top->next;
+		aux = aux->next;
 		free(aux);
 	}
 	else{
