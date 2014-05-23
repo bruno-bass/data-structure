@@ -1,6 +1,6 @@
 /*
- * pilha.c
- * Copyright (C) 2014 bruno <bruno@bruno-Iinux>
+ * Linked Stack
+ * Copyright (C) 2014 BruNo <brunohdbass@gmail.com>
  *
  * Distributed under terms of the MIT license.
  */
