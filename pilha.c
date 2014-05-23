@@ -25,7 +25,7 @@ int clearStack(Stack **top){
 	 return 1;
 }
 
-void insertStack (Stack **top,int x){
+void _push (Stack **top,int x){
 	Stack *p = *top;
 	if((p=malloc(sizeof(Stack)))==NULL)
 		printf("Error!");
@@ -58,17 +58,30 @@ int sizeofStack (Stack *top){
 	return x;
 }
 
+void _pop(Stack *top){
+	Stack *aux;
+	if(top != NULL){
+		aux = top;
+		top = top->next;
+		free(top);
+	}
+	else{
+		printf("Empty List!");
+	}
+}
+
+
 int main(){
 	Stack *topo;
 	topo=NULL;
 	system("clear");	
-	insertStack(&topo,1);
-	insertStack(&topo,2);
-	insertStack(&topo,3);
+	_push(&topo,1);
+	_push(&topo,2);
+	_push(&topo,3);
 	printf("\n\n %i \n\n",sizeofStack(topo));
 	printStack(topo);
 	__pause();
-	clearStack(&topo);
+	_pop(&topo);
 	printStack(topo);
 	printf("\n\n %i \n\n",sizeofStack(topo));
 	__pause();
