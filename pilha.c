@@ -5,6 +5,8 @@
  * Distributed under terms of the MIT license.
  */
 
+//Stack - FIFO
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "linked-list.h"
@@ -70,7 +72,7 @@ void _pop(Stack **top){
 	else{
 		aux = p;
 		*top = p->next;
-		aux->prox=NULL;
+		aux->next=NULL;
 	}
 
 	
