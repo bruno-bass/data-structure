@@ -59,15 +59,21 @@ int sizeofStack (Stack *top){
 }
 
 void _pop(Stack **top){
-	Stack *aux;
-	if(top != NULL){
-		aux = *top;
-		aux = aux->next;
-		free(aux);
-	}
-	else{
+	Stack *aux, *p=*top;
+	if(p==NULL){
 		printf("Empty List!");
 	}
+	if(p->next==NULL){
+		*top==NULL;
+		free(p);
+	}
+	else{
+		aux = p;
+		*top = p->next;
+		aux->prox=NULL;
+	}
+
+	
 }
 
 
