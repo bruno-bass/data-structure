@@ -46,6 +46,15 @@ void printQueue(SQueue *queue){
 	printf("\n\n");
 }
 
+void _pop(SQueue *queue){
+	if(queue->begin != queue->end)
+		queue->begin = (queue->begin+1)%MAX;
+	else
+		printf("Empty Queue!\n");
+
+}
+
+
 
 int main(){
 	SQueue queue;
@@ -58,8 +67,14 @@ int main(){
 	_push(&queue,5);
 	
 	printQueue(&queue);
-		
-	return 1;
+	
+	_pop(&queue);
+
+	printQueue(&queue);
+	
+	_push(&queue,1);
+
+	printQueue(&queue);
 }
 
 
